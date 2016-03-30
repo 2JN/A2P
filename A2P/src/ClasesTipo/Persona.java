@@ -8,14 +8,17 @@ package ClasesTipo;
 /**
  *
  * @author usuario
+ * Esta clase es la principal para los tipos de indentidad que identifican a  
+ * personas en la organizacion de proyectos 
  */
+//inicio de la clase
 public class Persona {
     protected String nombre;
     protected String apellido;
     protected String direccion;
     protected Integer telefono;
     protected String email;
-
+//metodos set y get para cada variable 
     public String getNombre() {
         return nombre;
     }

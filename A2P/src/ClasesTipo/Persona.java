@@ -18,7 +18,18 @@ public class Persona {
     protected String direccion;
     protected Integer telefono;
     protected String email;
-//metodos set y get para cada variable 
+
+    //constructor de la clase
+    public Persona(String nombre, String apellido, String direccion, Integer telefono,
+            String email) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.direccion = direccion;
+        this.telefono = telefono;
+        this.email = email;
+    }
+
+    //metodos set y get para cada variable
     public String getNombre() {
         return nombre;
     }
@@ -61,3 +72,4 @@ public class Persona {
     
     
 }
+//cierre de la clase

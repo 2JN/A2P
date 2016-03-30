@@ -16,10 +16,19 @@ public class Administrador extends Persona {
 private int clave;
 private String contraseña;
 //creacion de los metodos set y get 
+
+    public Administrador(int clave, String contraseña, String nombre, 
+            String apellido, String direccion, Integer telefono,String email) {
+        super(nombre,apellido,direccion,telefono,email);
+        this.clave = clave;
+        this.contraseña = contraseña;
+     
+    }
+    
     public int getClave() {
         return clave;
     }
-
+    
     public void setClave(int clave) {
         this.clave = clave;
     }

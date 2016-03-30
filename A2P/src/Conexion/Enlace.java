@@ -50,4 +50,20 @@ public class Enlace {
                     }
                     return res;
                 }
+     
+     public void insertar( String sql )
+     {
+         Connection miConexion=(Connection) Enlace.GetConnection();
+                    
+         try
+         {
+            Statement statement=(Statement) miConexion.createStatement();
+            statement.execute( sql );  
+            statement.close();
+            miConexion.close();
+         } catch (Exception e)
+         {
+         
+         }
+     }
 }

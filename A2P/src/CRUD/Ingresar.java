@@ -1,35 +1,52 @@
 package CRUD;
 
+import Conexion.Enlace;
 /**
  *
  * @author felepo
  */
 public class Ingresar 
 {
-    public void ingresarInversionista( Inversionista inversionista)
+    
+    
+    public void ingresarInversionista( Inversionista inversionista )
     {
-        inversionista = new Inversionista();
+        Enlace miConexion = new Enlace();
         
-        inversionista.setNombre();
-        inversionista.setApellido();
-        inversionista.setDireccion();
-        inversionista.setTelefono();
-        inversionista.setEmail();
-        inversionista.setNit( /*desde la caja de texto*/ );
-        inversionista.setCantidadInversion( /*desde la caja de texto*/ );
+        String sql;
+        
+        sql = "INSERT INTO Inversionista"
+                + "VALUES('"
+                + inversionista.getNombre() + "','"
+                + inversionista.getApellido() + "','"
+                + inversionista.getDireccion() + "','"
+                + inversionista.getTelefono() + "','"
+                + inversionista.getEmail() + "','"
+                + inversionista.getNit() + "','"
+                + inversionista.getCantidadInversion()
+                + ")";
+        
+        miConexion.insertar(sql);
     }
     
     public void ingresarProyecto( Proyecto proyecto )
     {
-        proyecto = new Proyecto();
+        Enlace miConexion = new Enlace();
         
-        proyecto.setNombre();
-        proyecto.setDescripcionProyecto();
-        proyecto.setPresupuesto();
-        proyecto.setFechaInicio();
-        proyecto.setFechaFinalizacion();
-        proyecto.setNombreGrupo();
-        proyecto.setDescripcionGrupo();
+        String sql;
+        
+        sql = "INSERT INTO Inversionista"
+                + "VALUES('"
+                + proyecto.getNombreProyecto() + "','"
+                + proyecto.getDescripcionProyecto() + "','"
+                + proyecto.getPresupuesto() + "','"
+                + proyecto.getFechaInicio() + "','"
+                + proyecto.getFechaFinalizacion() + "','"
+                + proyecto.getNombreGrupo() + "','"
+                + proyecto.getDescripcionGrupo() + "','"
+                + ")";
+        
+        miConexion.insertar(sql);
     }
     
     public void ingresarInvestigador( Investigador investigador )
@@ -46,6 +63,8 @@ public class Ingresar
         investigador.setEspecialidad();
         investigador.setFechaInicioLabor();
         investigador.setNombreGrupo();
+        
+        //Hacer los Query's para ingresarlo a la base de datos
     }
     
     public void ingresarAdministrador( Administrador administrador )
@@ -59,5 +78,7 @@ public class Ingresar
         administrador.setDireccion();
         administrador.setTelefono();
         administrador.setEmail();
+        
+        //Hacer los Query's para ingresarlo a la base de datos
     }
 }

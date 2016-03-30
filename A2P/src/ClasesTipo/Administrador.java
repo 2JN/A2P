@@ -14,15 +14,15 @@ package ClasesTipo;
 //inicio de la clase 
 public class Administrador extends Persona {
 private int clave;
-private String contraseña;
+private String contrasenia;
 //creacion de los metodos set y get 
 
-    public Administrador(int clave, String contraseña, String nombre, 
+    public Administrador(int clave, String contrasenia, String nombre, 
             String apellido, String direccion, Integer telefono,String email) {
         super(nombre,apellido,direccion,telefono,email);
         this.clave = clave;
-        this.contraseña = contraseña;
-     
+        this.contrasenia = contrasenia;
+
     }
     
     public int getClave() {
@@ -33,12 +33,12 @@ private String contraseña;
         this.clave = clave;
     }
 
-    public String getContraseña() {
-        return contraseña;
+    public String getContrasenia() {
+        return contrasenia;
     }
 
     public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
+        this.contrasenia = contrasenia;
     }
 
 }

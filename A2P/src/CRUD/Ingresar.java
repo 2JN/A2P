@@ -1,14 +1,13 @@
 package CRUD;
 
 import Conexion.Enlace;
+import ClasesTipo.*;
 /**
  *
  * @author felepo
  */
 public class Ingresar 
 {
-    
-    
     public void ingresarInversionista( Inversionista inversionista )
     {
         Enlace miConexion = new Enlace();
@@ -41,44 +40,40 @@ public class Ingresar
                 + proyecto.getDescripcionProyecto() + "','"
                 + proyecto.getPresupuesto() + "','"
                 + proyecto.getFechaInicio() + "','"
-                + proyecto.getFechaFinalizacion() + "','"
-                + proyecto.getNombreGrupo() + "','"
-                + proyecto.getDescripcionGrupo() + "','"
-                + ")";
+                + proyecto.getFechaFinal() + "','"
+                + proyecto.getGrupoEncargado() + ")";
         
         miConexion.insertar(sql);
     }
     
     public void ingresarInvestigador( Investigador investigador )
     {
-        investigador = new Investigador();
+        Enlace miConexion = new Enlace();
         
-        investigador.setDpi();
-        investigador.setNombre();
-        investigador.setApellido();
-        investigador.setDireccion();
-        investigador.setTelefono();
-        investigador.setEmail();
-        investigador.setGradoAcademico();
-        investigador.setEspecialidad();
-        investigador.setFechaInicioLabor();
-        investigador.setNombreGrupo();
+        String sql;
         
-        //Hacer los Query's para ingresarlo a la base de datos
+        sql = "INSERT INTO Inversionista"
+                + "VALUES('"
+                + investigador.getDpi() + "','"
+                + investigador.getNombre() + "','"
+                + investigador.getGradoAcademico() + "','"
+                + investigador.getEspecialidad() + "','"
+                + investigador.getFechaInicioLabor() + ")";
+        
+                miConexion.insertar(sql);
     }
     
     public void ingresarAdministrador( Administrador administrador )
     {
-        administrador = new Administrador();
+        Enlace miConexion = new Enlace();
+
+        String sql;
         
-        administrador.setClave();
-        administrador.setContrasenia();
-        administrador.setNombre();
-        administrador.setApellido();
-        administrador.setDireccion();
-        administrador.setTelefono();
-        administrador.setEmail();
+        sql = "INSERT INTO Inversionista"
+                + "VALUES('"
+                + administrador.getClave() + "','"
+                + administrador.getContrasenia() + ")";
         
-        //Hacer los Query's para ingresarlo a la base de datos
+        miConexion.insertar(sql);
     }
 }

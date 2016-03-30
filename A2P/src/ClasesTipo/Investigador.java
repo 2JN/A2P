@@ -14,7 +14,7 @@ import java.util.Date;
 //inicio de la clase 
 public class Investigador extends Persona {
     private Integer dpi;
-    private Date fechaInicionLabor;
+    private Date fechaInicioLabor;
     private String gradoAcademico;
     private String especialidad;
 
@@ -25,7 +25,7 @@ public class Investigador extends Persona {
         
         super(nombre, apellido, direccion, telefono, email);
         this.dpi = dpi;
-        this.fechaInicionLabor = fechaInicionLabor;
+        this.fechaInicioLabor = fechaInicioLabor;
         this.gradoAcademico = gradoAcademico;
         this.especialidad = especialidad;
     }
@@ -38,12 +38,12 @@ public class Investigador extends Persona {
         this.dpi = dpi;
     }
 
-    public Date getFechaInicionLabor() {
-        return fechaInicionLabor;
+    public Date getFechaInicioLabor() {
+        return fechaInicioLabor;
     }
 
-    public void setFechaInicionLabor(Date fechaInicionLabor) {
-        this.fechaInicionLabor = fechaInicionLabor;
+    public void setFechaInicioLabor(Date fechaInicioLabor) {
+        this.fechaInicioLabor = fechaInicioLabor;
     }
 
     

@@ -19,7 +19,6 @@ public class Proyecto {
    private Date fechaFinal;
    private Inversion[] inversiones;
    private Grupo grupoEncargado;
-
     public Proyecto(String nombreProyecto, String descripcionProyecto, double presupuesto, Date fechaInicio, Date fechaFinal, Inversion[] inversiones, Grupo grupoEncargado) {
         this.nombreProyecto = nombreProyecto;
         this.descripcionProyecto = descripcionProyecto;

@@ -6,7 +6,7 @@ package CRUD;
  */
 public class Ingresar 
 {
-    public void ingresarInversionista( Inversionista inversionista)
+    public void ingresarInversionista( Inversionista inversionista )
     {
         inversionista = new Inversionista();
         
@@ -17,19 +17,23 @@ public class Ingresar
         inversionista.setEmail();
         inversionista.setNit( /*desde la caja de texto*/ );
         inversionista.setCantidadInversion( /*desde la caja de texto*/ );
+        
+        //Hacer los Query's para ingresarlo a la base de datos
     }
     
     public void ingresarProyecto( Proyecto proyecto )
     {
         proyecto = new Proyecto();
         
-        proyecto.setNombre();
+        proyecto.setNombreProyecto();
         proyecto.setDescripcionProyecto();
         proyecto.setPresupuesto();
         proyecto.setFechaInicio();
         proyecto.setFechaFinalizacion();
         proyecto.setNombreGrupo();
         proyecto.setDescripcionGrupo();
+        
+        //Hacer los Query's para ingresarlo a la base de datos
     }
     
     public void ingresarInvestigador( Investigador investigador )
@@ -46,6 +50,8 @@ public class Ingresar
         investigador.setEspecialidad();
         investigador.setFechaInicioLabor();
         investigador.setNombreGrupo();
+        
+        //Hacer los Query's para ingresarlo a la base de datos
     }
     
     public void ingresarAdministrador( Administrador administrador )
@@ -59,5 +65,7 @@ public class Ingresar
         administrador.setDireccion();
         administrador.setTelefono();
         administrador.setEmail();
+        
+        //Hacer los Query's para ingresarlo a la base de datos
     }
 }

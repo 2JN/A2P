@@ -19,7 +19,8 @@ public class Proyecto {
    private Date fechaFinal;
    private Inversion[] inversiones;
    private Grupo grupoEncargado;
-    public Proyecto(String nombreProyecto, String descripcionProyecto, double presupuesto, Date fechaInicio, Date fechaFinal, Inversion[] inversiones, Grupo grupoEncargado) {
+   private int id;
+    public Proyecto(int id, String nombreProyecto, String descripcionProyecto, double presupuesto, Date fechaInicio, Date fechaFinal, Inversion[] inversiones, Grupo grupoEncargado) {
         this.nombreProyecto = nombreProyecto;
         this.descripcionProyecto = descripcionProyecto;
         this.presupuesto = presupuesto;
@@ -27,8 +28,18 @@ public class Proyecto {
         this.fechaFinal = fechaFinal;
         this.inversiones = inversiones;
         this.grupoEncargado = grupoEncargado;
+        this.id=id;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    
     public String getNombreProyecto() {
         return nombreProyecto;
     }

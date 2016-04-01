@@ -1,5 +1,5 @@
 package CRUD;
-
+import ClasesTipo.*;
 /**
  *
  * @author felepo
@@ -9,7 +9,7 @@ public class Modificar
     public void modificarInversionista( String nombreCampo, String nuevoValor )
     {
         
-        Inversionista inversionista = new Inversionista();
+        Inversionista inversionista;
         
         if( nombreCampo == "nombre" )
             //Query para la base de datos
@@ -34,7 +34,7 @@ public class Modificar
     
     public void modificarProyecto( String nombreCampo, String nuevoValor )
     {
-        Proyecto proyecto = new Proyecto();
+        Proyecto proyecto;
         
         if( nombreCampo == "nombreProyecto" )
             //query para la bd

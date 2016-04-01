@@ -18,10 +18,10 @@ public class Proyecto {
    private  Date fechaInicio;
    private Date fechaFinal;
    private Inversion[] inversiones;
-   private String nombreGrupo;
+   private Grupo nombreGrupo;
    private int idProyecto;
     public Proyecto(int idProyecto , String nombreProyecto, String descripcionProyecto, 
-            double presupuesto, Date fechaInicio, Date fechaFinal, Inversion[] inversiones, String nombreEncargado) {
+            double presupuesto, Date fechaInicio, Date fechaFinal, Inversion[] inversiones, Grupo nombreGrupo) {
         this.nombreProyecto = nombreProyecto;
         this.descripcionProyecto = descripcionProyecto;
         this.presupuesto = presupuesto;
@@ -88,13 +88,13 @@ public class Proyecto {
         this.inversiones = inversiones;
     }
 
-    public String getNombreGrupo() {
+    public Grupo getNombreGrupo() {
         return nombreGrupo;
     }
 
-    public void setNombreGrupo(String nombreGrupo) {
+    public void setNombreGrupo(Grupo nombreGrupo) {
         this.nombreGrupo = nombreGrupo;
     }
+    
 
-   
 }

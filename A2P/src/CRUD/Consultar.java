@@ -8,6 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class Consultar {
+    
     public ArrayList<Inversionista> consultarInversionista(Connection con, 
         String nombre, String apellido){
         
@@ -45,8 +46,10 @@ public class Consultar {
             } catch(SQLException ex){
 
             } finally {
-                return inv;
+                
             }
         }
+        
+        return inv;
     }
 }

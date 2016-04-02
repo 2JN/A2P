@@ -26,6 +26,9 @@ public class Inversionista extends Persona{
         this.nit = nit;
         
     }
+    public Inversionista(String nombre){
+        super(nombre);
+    }
 
     
     public int getNit() {

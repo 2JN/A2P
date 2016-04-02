@@ -29,6 +29,11 @@ public class Persona {
         this.email = email;
     }
 
+    public Persona(String nombre) {
+        this.nombre = nombre;
+    }
+    
+
     //metodos set y get para cada variable
     public String getNombre() {
         return nombre;

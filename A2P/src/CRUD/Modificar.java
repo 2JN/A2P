@@ -1,60 +1,61 @@
 package CRUD;
 import ClasesTipo.*;
+import Conexion.Enlace;
 /**
  *
  * @author felepo
  */
 public class Modificar 
 {
-    public void modificarInversionista( String nombreCampo, String nuevoValor )
+    public void modificarInversionista( int nit, String nombreCampo, 
+            String nuevoValor )
     {
+        Enlace miConexion = new Enlace();
+        String sentenciaSql;
         
-        Inversionista inversionista;
+        sentenciaSql = "UPDATE Inversionista "
+                        + "SET " + nombreCampo + " = " + nuevoValor
+                        + " WHERE nit = " + nit +"";
         
-        if( nombreCampo == "nombre" )
-            //Query para la base de datos
-       
-        if( nombreCampo == "apellido" )
-            
-        
-        if( nombreCampo == "direccion" )
-            
-        
-        if( nombreCampo == "telefono" )
-            
-        
-        if( nombreCampo == "email" )
-            
-        
-        if( nombreCampo == "cantidadInversion" )
-            
-        
-        //Hacer los Query's para ingresarlo a la base de datos
+        miConexion.insertar( sentenciaSql );
     }
     
-    public void modificarProyecto( String nombreCampo, String nuevoValor )
+    public void modificarProyecto( int idProyecto, String nombreCampo, 
+            String nuevoValor )
     {
-        Proyecto proyecto;
+        Enlace miConexion = new Enlace();
+        String sentenciaSql;
         
-        if( nombreCampo == "nombreProyecto" )
-            //query para la bd
+        sentenciaSql = "UPDATE Proyecto "
+                        + "SET " + nombreCampo + " = " + nuevoValor
+                        + " WHERE idProyecto = " + idProyecto +"";
         
-        if( nombreCampo == "descripcionProyecto" )
-            
+        miConexion.insertar( sentenciaSql );
+    }
+    
+    public void modificarInvestigador( int dpi, String nombreCampo, 
+            String nuevoValor )
+    {
+        Enlace miConexion = new Enlace();
+        String sentenciaSql;
         
-        if( nombreCampo == "presupuesto" )
-            
+        sentenciaSql = "UPDATE Investigador "
+                        + "SET " + nombreCampo + " = " + nuevoValor
+                        + " WHERE dpi = " + dpi +"";
         
-        if( nombreCampo == "fechaInicio" )
-            
+        miConexion.insertar( sentenciaSql );
+    }
+    
+    public void modificarAdministrador( int clave, String nombreCampo, 
+            String nuevoValor )
+    {
+        Enlace miConexion = new Enlace();
+        String sentenciaSql;
         
-        if( nombreCampo == "fechaFinalizacion" )
-            
+        sentenciaSql = "UPDATE Administrador "
+                        + "SET " + nombreCampo + " = " + nuevoValor
+                        + " WHERE clave = " + clave +"";
         
-        if( nombreCampo == "nombreGrupo" )
-            
-        
-        if( nombreCampo == "descripcionGrupo" )
-            
+        miConexion.insertar( sentenciaSql );
     }
 }

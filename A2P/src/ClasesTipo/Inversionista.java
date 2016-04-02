@@ -20,6 +20,12 @@ public class Inversionista extends Persona{
         this.cantidadInversion = cantidadInversion;
         
     }
+     public Inversionista(int nit, String nombre, String apellido, String direccion, Integer telefono,
+            String email) {
+        super(nombre,  apellido,  direccion,  telefono, email);
+        this.nit = nit;
+        
+    }
 
     
     public int getNit() {

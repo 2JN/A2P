@@ -81,7 +81,7 @@ public class Proyecto {
         this.fechaFinal = fechaFinal;
     }
 
-    public ArrayList<Inversion>  getInversiones() {
+    public ArrayList<Inversion>      getInversiones() {
         return inversiones;
     }
 

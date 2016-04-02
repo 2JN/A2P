@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package ClasesTipo;
+import java.util.ArrayList;
 import java.util.Date;
 /**
  *
@@ -17,11 +18,11 @@ public class Proyecto {
    private  double presupuesto;
    private  Date fechaInicio;
    private Date fechaFinal;
-   private Inversion[] inversiones;
+      private ArrayList<Inversion> inversiones;
    private Grupo nombreGrupo;
    private int idProyecto;
     public Proyecto(int idProyecto , String nombreProyecto, String descripcionProyecto, 
-            double presupuesto, Date fechaInicio, Date fechaFinal, Inversion[] inversiones, Grupo nombreGrupo) {
+            double presupuesto, Date fechaInicio, Date fechaFinal, ArrayList<Inversion>  inversiones, Grupo nombreGrupo) {
         this.nombreProyecto = nombreProyecto;
         this.descripcionProyecto = descripcionProyecto;
         this.presupuesto = presupuesto;
@@ -80,11 +81,11 @@ public class Proyecto {
         this.fechaFinal = fechaFinal;
     }
 
-    public Inversion[] getInversiones() {
+    public ArrayList<Inversion>      getInversiones() {
         return inversiones;
     }
 
-    public void setInversiones(Inversion[] inversiones) {
+    public void setInversiones(ArrayList<Inversion>  inversiones) {
         this.inversiones = inversiones;
     }
 

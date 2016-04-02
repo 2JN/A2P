@@ -37,7 +37,7 @@ private String contrasenia;
         return contrasenia;
     }
 
-    public void setContraseña(String contraseña) {
+    public void setContrasenia(String contrasenia) {
         this.contrasenia = contrasenia;
     }
 

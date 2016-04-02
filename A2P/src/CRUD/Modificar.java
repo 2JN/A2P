@@ -1,5 +1,4 @@
 package CRUD;
-import ClasesTipo.*;
 import Conexion.Enlace;
 /**
  *

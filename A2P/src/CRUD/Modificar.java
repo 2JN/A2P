@@ -14,7 +14,7 @@ public class Modificar
         
         sentenciaSql = "UPDATE Inversionista "
                         + "SET " + nombreCampo + " = " + nuevoValor
-                        + " WHERE nit = " + nit +"";
+                        + " WHERE nit = " + nit;
         
         miConexion.insertar( sentenciaSql );
     }
@@ -27,7 +27,7 @@ public class Modificar
         
         sentenciaSql = "UPDATE Proyecto "
                         + "SET " + nombreCampo + " = " + nuevoValor
-                        + " WHERE idProyecto = " + idProyecto +"";
+                        + " WHERE idProyecto = " + idProyecto;
         
         miConexion.insertar( sentenciaSql );
     }
@@ -40,7 +40,7 @@ public class Modificar
         
         sentenciaSql = "UPDATE Investigador "
                         + "SET " + nombreCampo + " = " + nuevoValor
-                        + " WHERE dpi = " + dpi +"";
+                        + " WHERE dpi = " + dpi;
         
         miConexion.insertar( sentenciaSql );
     }
@@ -53,7 +53,7 @@ public class Modificar
         
         sentenciaSql = "UPDATE Administrador "
                         + "SET " + nombreCampo + " = " + nuevoValor
-                        + " WHERE clave = " + clave +"";
+                        + " WHERE clave = " + clave;
         
         miConexion.insertar( sentenciaSql );
     }

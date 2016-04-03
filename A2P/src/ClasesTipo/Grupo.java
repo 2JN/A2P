@@ -12,13 +12,11 @@ package ClasesTipo;
  * al mismo 
  */
 public class Grupo {
-    private String nombreGrupo, descripcionGrupo;
+    private String nombreGrupo;
     private Investigador[] imvestigadores;
 
-    public Grupo(String nombreGrupo, String descripcionGrupo, 
-                Investigador[] imvestigadores) {
+    public Grupo(String nombreGrupo, Investigador[] imvestigadores) {
         this.nombreGrupo = nombreGrupo;
-        this.descripcionGrupo = descripcionGrupo;
         this.imvestigadores = imvestigadores;
     }
 
@@ -30,13 +28,6 @@ public class Grupo {
         this.nombreGrupo = nombreGrupo;
     }
 
-    public String getDescripcionGrupo() {
-        return descripcionGrupo;
-    }
-
-    public void setDescripcionGrupo(String descripcionGrupo) {
-        this.descripcionGrupo = descripcionGrupo;
-    }
 
     public Investigador[] getImvestigadores() {
         return imvestigadores;

@@ -19,10 +19,10 @@ public class Proyecto {
    private  Date fechaInicio;
    private Date fechaFinal;
       private ArrayList<Inversion> inversiones;
-   private Grupo nombreGrupo;
+   private ArrayList<Grupo>  nombreGrupo;
    private int idProyecto;
     public Proyecto(int idProyecto , String nombreProyecto, String descripcionProyecto, 
-            double presupuesto, Date fechaInicio, Date fechaFinal, ArrayList<Inversion>  inversiones, Grupo nombreGrupo) {
+            double presupuesto, Date fechaInicio, Date fechaFinal, ArrayList<Inversion>  inversiones, ArrayList<Grupo> nombreGrupo) {
         this.nombreProyecto = nombreProyecto;
         this.descripcionProyecto = descripcionProyecto;
         this.presupuesto = presupuesto;
@@ -89,11 +89,11 @@ public class Proyecto {
         this.inversiones = inversiones;
     }
 
-    public Grupo getNombreGrupo() {
+    public ArrayList<Grupo> getNombreGrupo() {
         return nombreGrupo;
     }
 
-    public void setNombreGrupo(Grupo nombreGrupo) {
+    public void setNombreGrupo(ArrayList<Grupo> nombreGrupo) {
         this.nombreGrupo = nombreGrupo;
     }
     

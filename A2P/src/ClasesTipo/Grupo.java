@@ -5,6 +5,8 @@
  */
 package ClasesTipo;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author usuario
@@ -13,11 +15,11 @@ package ClasesTipo;
  */
 public class Grupo {
     private String nombreGrupo;
-    private Investigador[] imvestigadores;
+    private ArrayList<Investigador> investigadores;
 
-    public Grupo(String nombreGrupo, Investigador[] imvestigadores) {
+    public Grupo(String nombreGrupo, ArrayList<Investigador> investigadores) {
         this.nombreGrupo = nombreGrupo;
-        this.imvestigadores = imvestigadores;
+        this.investigadores = investigadores;
     }
 
     public String getNombreGrupo() {
@@ -28,13 +30,12 @@ public class Grupo {
         this.nombreGrupo = nombreGrupo;
     }
 
-
-    public Investigador[] getImvestigadores() {
-        return imvestigadores;
+    public ArrayList<Investigador> getImvestigadores() {
+        return investigadores;
     }
 
-    public void setImvestigadores(Investigador[] imvestigadores) {
-        this.imvestigadores = imvestigadores;
+    public void setImvestigadores(ArrayList<Investigador> imvestigadores) {
+        this.investigadores = imvestigadores;
     }
     
 }

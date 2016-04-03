@@ -7,6 +7,7 @@ package Formularios;
 
 import ClasesTipo.Inversion;
 import ClasesTipo.Inversionista;
+
 import java.util.ArrayList;
 
 /**

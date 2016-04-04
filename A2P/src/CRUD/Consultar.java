@@ -1,4 +1,5 @@
 package CRUD;
+import ClasesTipo.Administrador;
 import ClasesTipo.Grupo;
 import ClasesTipo.Inversion;
 import ClasesTipo.Inversionista;
@@ -400,10 +401,31 @@ public class Consultar {
                     );
                 }
             } catch(SQLException ex){
-            
+                
             }
         }
         
         return investigador;
+    }
+    
+    public Administrador consultarAdministrador(Connection con){
+        Administrador admin = null;
+        ResultSet rs = null;
+        
+        try{
+            rs = con.prepareStatement("SELECT * FROM Administrador")
+                    .executeQuery();
+            
+            rs.next();
+            
+            admin = new Administrador(rs.getInt(1), rs.getString(2),
+                    rs.getString(3), rs.getString(4), rs.getString(5),
+                    rs.getInt(6), rs.getString(7));
+            
+        } catch(SQLException ex){
+        
+        }
+        
+        return admin;
     }
 }

@@ -2,6 +2,7 @@ package CRUD;
 
 import Conexion.Enlace;
 import ClasesTipo.*;
+import java.text.SimpleDateFormat;
 /**
  *
  * @author felepo
@@ -25,13 +26,14 @@ public class Ingresar
                         + inversionista.getDireccion() + "','"
                         + inversionista.getTelefono() + "','"
                         + inversionista.getEmail()
-                        + ")";
+                        + "')";
         
         miConexion.insertar(sentenciaSql);
     }
     
     public void ingresarProyecto( Proyecto proyecto ) //pendiente en ingresar nombreGrupo
     {
+        SimpleDateFormat formatoFecha = new SimpleDateFormat("yyyy-MM-dd");
         Enlace miConexion = new Enlace();
         
         String sentenciaSql;
@@ -43,14 +45,15 @@ public class Ingresar
                         + proyecto.getNombreProyecto() + "','"
                         + proyecto.getDescripcionProyecto() + "','"
                         + proyecto.getPresupuesto() + "','"
-                        + proyecto.getFechaInicio() + "','"
-                        + proyecto.getFechaFinal() + ")";
+                        + formatoFecha.format(proyecto.getFechaInicio()) + "','"
+                        + formatoFecha.format(proyecto.getFechaFinal()) + "')";
         
         miConexion.insertar(sentenciaSql);
     }
     
     public void ingresarInvestigador( Investigador investigador )
     {
+        SimpleDateFormat formatoFecha = new SimpleDateFormat("yyyy-MM-dd");
         Enlace miConexion = new Enlace();
         
         String sentenciaSql;
@@ -60,14 +63,15 @@ public class Ingresar
                 + "telefono,email)"
                         + "VALUES('"
                         + investigador.getDpi() + "','"
-                        + investigador.getFechaInicioLabor() + "','"
+                        + formatoFecha.format( 
+                                investigador.getFechaInicioLabor() ) + "','"
                         + investigador.getGradoAcademico() + "','"
                         + investigador.getEspecialidad() + "','"
                         + investigador.getNombre() + "','"
                         + investigador.getApellido() + "','"
                         + investigador.getDireccion() + "','"
                         + investigador.getTelefono() + "','"
-                        + investigador.getEmail() + ")";
+                        + investigador.getEmail() + "')";
         
                 miConexion.insertar(sentenciaSql);
     }
@@ -87,7 +91,7 @@ public class Ingresar
                         + administrador.getApellido() + "','"
                         + administrador.getDireccion() + "','"
                         + administrador.getTelefono() + "','"
-                        + administrador.getEmail() + ")";
+                        + administrador.getEmail() + "')";
         
         miConexion.insertar(sentenciaSql);
     }

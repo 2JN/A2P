@@ -33,7 +33,7 @@ public class Ingresar
     
     public void ingresarProyecto( Proyecto proyecto ) //pendiente en ingresar nombreGrupo
     {
-        SimpleDateFormat formatoFecha = new SimpleDateFormat("dd-MM-yyyy");
+        SimpleDateFormat formatoFecha = new SimpleDateFormat("yyyy-MM-dd");
         Enlace miConexion = new Enlace();
         
         String sentenciaSql;
@@ -53,7 +53,7 @@ public class Ingresar
     
     public void ingresarInvestigador( Investigador investigador )
     {
-        SimpleDateFormat formatoFecha = new SimpleDateFormat("dd-MM-yyyy");
+        SimpleDateFormat formatoFecha = new SimpleDateFormat("yyyy-MM-dd");
         Enlace miConexion = new Enlace();
         
         String sentenciaSql;

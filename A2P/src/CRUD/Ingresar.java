@@ -53,7 +53,7 @@ public class Ingresar
     
     public void ingresarInvestigador( Investigador investigador )
     {
-        SimpleDateFormat formatoFecha = new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat formatoFecha = new SimpleDateFormat("dd-MM-yyyy");
         Enlace miConexion = new Enlace();
         
         String sentenciaSql;

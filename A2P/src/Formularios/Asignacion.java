@@ -21,27 +21,27 @@ import javax.swing.JOptionPane;
  *
  * @author Fernando Ambrosio
  */
-public class Inversiones extends javax.swing.JFrame {
+public class Asignacion extends javax.swing.JFrame {
 
     /**
      * Creates new form Inversionistas
      */
-    public Inversiones() {
+    public Asignacion() {
         this.setUndecorated (true);
        initComponents();
         setLocationRelativeTo(null);
         
          ResultSet rs;  
-        TextAutoCompleter textAutoAcompleter1 = new TextAutoCompleter(inversionista);
+        TextAutoCompleter textAutoAcompleter1 = new TextAutoCompleter(codigo);
         try {
-            PreparedStatement pstm = Enlace.GetConnection().prepareStatement("SELECT DISTINCT nombre FROM inversionista ");
+            PreparedStatement pstm = Enlace.GetConnection().prepareStatement("SELECT DISTINCT idProyecto FROM Proyecto ");
                rs= pstm.executeQuery(); 
         
                while( rs.next() )
 
             {
 
-            textAutoAcompleter1.addItem( rs.getString( "nombre" ) );
+            textAutoAcompleter1.addItem( rs.getString( "idProyecto" ) );
             
 
             }
@@ -49,16 +49,16 @@ public class Inversiones extends javax.swing.JFrame {
             //Logger.getLogger(Cheques.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        TextAutoCompleter textAutoAcompleter2 = new TextAutoCompleter(nit);
+        TextAutoCompleter textAutoAcompleter2 = new TextAutoCompleter(dpi);
         try {
-            PreparedStatement pstm = Enlace.GetConnection().prepareStatement("SELECT DISTINCT nit FROM inversionista ");
+            PreparedStatement pstm = Enlace.GetConnection().prepareStatement("SELECT DISTINCT dpi FROM investigador ");
                rs= pstm.executeQuery(); 
         
                while( rs.next() )
 
             {
 
-            textAutoAcompleter2.addItem( rs.getString( "nit" ) );
+            textAutoAcompleter2.addItem( rs.getString( "dpi" ) );
             
 
             }
@@ -66,16 +66,16 @@ public class Inversiones extends javax.swing.JFrame {
             //Logger.getLogger(Cheques.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-         TextAutoCompleter textAutoAcompleter3 = new TextAutoCompleter(coproyecto);
+         TextAutoCompleter textAutoAcompleter3 = new TextAutoCompleter(investigador);
         try {
-            PreparedStatement pstm = Enlace.GetConnection().prepareStatement("SELECT DISTINCT idProyecto FROM proyecto ");
+            PreparedStatement pstm = Enlace.GetConnection().prepareStatement("SELECT DISTINCT nombre FROM investigador ");
                rs= pstm.executeQuery(); 
         
                while( rs.next() )
 
             {
 
-            textAutoAcompleter3.addItem( rs.getString( "idProyecto" ) );
+            textAutoAcompleter3.addItem( rs.getString( "nombre" ) );
             
 
             }
@@ -100,7 +100,23 @@ public class Inversiones extends javax.swing.JFrame {
             //Logger.getLogger(Cheques.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-      
+        TextAutoCompleter textAutoAcompleter5= new TextAutoCompleter(grupo);
+        try {
+            PreparedStatement pstm = Enlace.GetConnection().prepareStatement("SELECT DISTINCT nombreGrupo FROM grupodesarrollo ");
+               rs= pstm.executeQuery(); 
+        
+               while( rs.next() )
+
+            {
+
+            textAutoAcompleter5.addItem( rs.getString( "nombreGrupo" ) );
+            
+
+            }
+        } catch (SQLException ex) {
+            //Logger.getLogger(Cheques.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }
 
     /**
@@ -117,15 +133,15 @@ public class Inversiones extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        coproyecto = new javax.swing.JTextField();
+        investigador = new javax.swing.JTextField();
         proyecto = new javax.swing.JTextField();
         aceptar = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
-        inversion = new javax.swing.JTextField();
+        grupo = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        inversionista = new javax.swing.JTextField();
-        nit = new javax.swing.JTextField();
+        codigo = new javax.swing.JTextField();
+        dpi = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -138,18 +154,18 @@ public class Inversiones extends javax.swing.JFrame {
         jcMousePanel1.setVisibleLogo(false);
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
-        jLabel1.setText("INVERSIONES");
+        jLabel1.setText("ASIGNACION DE PROYECTOS");
 
         jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabel2.setText("Codigo de Proyecto:");
+        jLabel2.setText("Investigador:");
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel3.setText("Proyecto:");
 
-        coproyecto.setFont(new java.awt.Font("Times New Roman", 0, 15)); // NOI18N
+        investigador.setFont(new java.awt.Font("Times New Roman", 0, 15)); // NOI18N
 
         proyecto.setFont(new java.awt.Font("Times New Roman", 0, 15)); // NOI18N
 
@@ -183,24 +199,24 @@ public class Inversiones extends javax.swing.JFrame {
         });
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabel4.setText("Inversion:");
+        jLabel4.setText("Grupo:");
 
-        inversion.setFont(new java.awt.Font("Times New Roman", 0, 15)); // NOI18N
-        inversion.addActionListener(new java.awt.event.ActionListener() {
+        grupo.setFont(new java.awt.Font("Times New Roman", 0, 15)); // NOI18N
+        grupo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inversionActionPerformed(evt);
+                grupoActionPerformed(evt);
             }
         });
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabel5.setText("Inversionista:");
+        jLabel5.setText("Codigo:");
 
-        inversionista.setFont(new java.awt.Font("Times New Roman", 0, 15)); // NOI18N
+        codigo.setFont(new java.awt.Font("Times New Roman", 0, 15)); // NOI18N
 
-        nit.setFont(new java.awt.Font("Times New Roman", 0, 15)); // NOI18N
+        dpi.setFont(new java.awt.Font("Times New Roman", 0, 15)); // NOI18N
 
         jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabel6.setText("Nit:");
+        jLabel6.setText("DPI:");
 
         javax.swing.GroupLayout jcMousePanel1Layout = new javax.swing.GroupLayout(jcMousePanel1);
         jcMousePanel1.setLayout(jcMousePanel1Layout);
@@ -222,16 +238,16 @@ public class Inversiones extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jcMousePanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(aceptar)
-                            .addComponent(inversion, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(grupo, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jcMousePanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addGroup(jcMousePanel1Layout.createSequentialGroup()
-                                    .addComponent(inversionista, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(codigo, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jLabel6)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(nit, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(dpi, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jcMousePanel1Layout.createSequentialGroup()
-                                    .addComponent(coproyecto, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(investigador, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGap(54, 54, 54)
                                     .addComponent(jLabel3)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -251,18 +267,18 @@ public class Inversiones extends javax.swing.JFrame {
                 .addGap(58, 58, 58)
                 .addGroup(jcMousePanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(inversionista, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(nit, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(codigo, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(dpi, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jcMousePanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(coproyecto, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(investigador, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3)
                     .addComponent(proyecto, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(12, 12, 12)
                 .addGroup(jcMousePanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(inversion, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(grupo, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(aceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -293,24 +309,25 @@ public class Inversiones extends javax.swing.JFrame {
 
             
            
-             int Nit=Integer.parseInt(nit.getText());
-             int CoProyecto= Integer.parseInt(coproyecto.getText());
-             String Inversionista=inversionista.getText();
+            
+            int Codigo=Integer.parseInt(codigo.getText());
+            int DPI=Integer.parseInt(dpi.getText());
+            String Investigador = investigador.getText();
            String Proyecto = proyecto.getText();
-           int Inversion = Integer.parseInt(inversion.getText());
+           String Grupo = grupo.getText();
            
             
             PreparedStatement pstm = Enlace.GetConnection().prepareStatement("insert into "
-                    + "inversion(Inversionista_nit, Proyecto_idProyecto,  Inversionista_Nombre, Proyecto_Nombre, cantidadInversion) "
+                    + "grupodesarrollo(Proyecto_idProyecto, Investigador_dpi,  Investigador_Nombre, Proyecto_Nombre, nombreGrupo) "
                     + " values(?,?,?,?,?)");
 
 
             
-            pstm.setInt(1,Nit); 
-            pstm.setInt(2,CoProyecto); 
-            pstm.setString(3,Inversionista); 
+            pstm.setInt(1,Codigo); 
+            pstm.setInt(2,DPI); 
+            pstm.setString(3,Investigador); 
             pstm.setString(4, Proyecto);
-            pstm.setInt(5, Inversion);
+            pstm.setString(5, Grupo);
          
             JOptionPane.showMessageDialog(this, "Datos ingresados correctamente");
             pstm.execute();
@@ -331,9 +348,9 @@ public class Inversiones extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void inversionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inversionActionPerformed
+    private void grupoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_grupoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_inversionActionPerformed
+    }//GEN-LAST:event_grupoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -356,13 +373,13 @@ public class Inversiones extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Inversiones.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Asignacion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Inversiones.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Asignacion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Inversiones.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Asignacion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Inversiones.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Asignacion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
@@ -372,15 +389,16 @@ public class Inversiones extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
 
             public void run() {
-                new Inversiones().setVisible(true);
+                new Asignacion().setVisible(true);
             }
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton aceptar;
-    private javax.swing.JTextField coproyecto;
-    private javax.swing.JTextField inversion;
-    private javax.swing.JTextField inversionista;
+    private javax.swing.JTextField codigo;
+    private javax.swing.JTextField dpi;
+    private javax.swing.JTextField grupo;
+    private javax.swing.JTextField investigador;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -390,7 +408,6 @@ public class Inversiones extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JSeparator jSeparator1;
     private jcMousePanel.jcMousePanel jcMousePanel1;
-    private javax.swing.JTextField nit;
     private javax.swing.JTextField proyecto;
     // End of variables declaration//GEN-END:variables
 }

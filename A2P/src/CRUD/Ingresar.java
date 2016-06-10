@@ -2,14 +2,17 @@ package CRUD;
 
 import Conexion.Enlace;
 import ClasesTipo.*;
+import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import javax.swing.JOptionPane;
 /**
  *
  * @author felepo
  */
 public class Ingresar 
 {
-    public void ingresarInversionista( Inversionista inversionista )
+    public static void ingresarInversionista( Inversionista inversionista )
     {
         Enlace miConexion = new Enlace();
         
@@ -53,7 +56,12 @@ public class Ingresar
     
     public void ingresarInvestigador( Investigador investigador )
     {
-        SimpleDateFormat formatoFecha = new SimpleDateFormat("yyyy-MM-dd");
+        //SimpleDateFormat formatoFecha = new SimpleDateFormat("yyyy-MM-dd");
+        //DateFormat ft = new SimpleDateFormat("dd/MM/yyyy");
+        //java.text.SimpleDateFormat sdf=new java.text.SimpleDateFormat("dd-MM-yyyy");
+        SimpleDateFormat ft = new SimpleDateFormat("yyyy-MM-dd");
+        //java.util.Date fecha = null; // crea objetos tipo util.Date y sql.Date
+        
         Enlace miConexion = new Enlace();
         
         String sentenciaSql;
@@ -63,8 +71,7 @@ public class Ingresar
                 + "telefono,email)"
                         + "VALUES('"
                         + investigador.getDpi() + "','"
-                        + formatoFecha.format( 
-                                investigador.getFechaInicioLabor() ) + "','"
+                        + ft.format(investigador.getFechaInicioLabor()) + "','"
                         + investigador.getGradoAcademico() + "','"
                         + investigador.getEspecialidad() + "','"
                         + investigador.getNombre() + "','"

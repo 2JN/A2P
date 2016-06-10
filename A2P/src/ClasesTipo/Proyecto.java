@@ -33,6 +33,15 @@ public class Proyecto {
         this.idProyecto =idProyecto ;
     }
 
+    public Proyecto(int idProyecto, String nombreProyecto, String descripcionProyecto, double presupuesto, Date fechaInicio, Date fechaFinal ) {
+        this.nombreProyecto = nombreProyecto;
+        this.descripcionProyecto = descripcionProyecto;
+        this.presupuesto = presupuesto;
+        this.fechaInicio = fechaInicio;
+        this.fechaFinal = fechaFinal;
+        this.idProyecto = idProyecto;
+    }
+
     public int getIdProyecto() {
         return idProyecto;
     }

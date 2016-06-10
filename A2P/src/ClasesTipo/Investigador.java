@@ -19,7 +19,7 @@ public class Investigador extends Persona {
     private String especialidad;
 
     //constructor de la clase investigador con llamado a la superclase Persona
-    public Investigador(Integer dpi, Date fechaInicionLabor, String gradoAcademico, 
+    public Investigador(Integer dpi, Date fechaInicioLabor, String gradoAcademico, 
             String especialidad, String nombre, String apellido,
             String direccion, Integer telefono, String email) {
         

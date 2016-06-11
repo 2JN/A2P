@@ -16,7 +16,7 @@ public class Enlace {
         Connection cn = null;
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            String url = "jdbc:mysql://localhost/Proyecto1";
+            String url = "jdbc:mysql://localhost/mydb";
             String user = "root";
             //String password = "";
             String password = "";
@@ -66,4 +66,62 @@ public class Enlace {
          
          }
      }
+     
+     
+      public ResultSet Investigadores(int Dpi)
+                {
+                     Connection miConexion=(Connection) Enlace.GetConnection();
+                    ResultSet res = null;
+                    
+                    try
+                    {
+                        
+                        PreparedStatement pstm = Enlace.GetConnection().prepareStatement("select * from investigador where dpi=?");
+                        pstm.setInt(1, Dpi);
+                        res=pstm.executeQuery();
+                    } catch (Exception e)
+                    {
+                       
+                    }
+                    return res;
+                    
+                }
+      
+      public ResultSet Inversionista(int Nit)
+                {
+                     Connection miConexion=(Connection) Enlace.GetConnection();
+                    ResultSet res = null;
+                    
+                    try
+                    {
+                        
+                        PreparedStatement pstm = Enlace.GetConnection().prepareStatement("select * from inversionista where nit=?");
+                        pstm.setInt(1, Nit);
+                        res=pstm.executeQuery();
+                    } catch (Exception e)
+                    {
+                       
+                    }
+                    return res;
+                    
+                }
+      
+       public ResultSet Proyectos(int idProyecto)
+                {
+                     Connection miConexion=(Connection) Enlace.GetConnection();
+                    ResultSet res = null;
+                    
+                    try
+                    {
+                        
+                        PreparedStatement pstm = Enlace.GetConnection().prepareStatement("select * from proyecto where idProyecto=?");
+                        pstm.setInt(1, idProyecto);
+                        res=pstm.executeQuery();
+                    } catch (Exception e)
+                    {
+                       
+                    }
+                    return res;
+                    
+                }
 }

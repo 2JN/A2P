@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c4a5ed84-f171-4cf0-a81a-713888ac5eee">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     proyecto.`idProyecto` AS proyecto_idProyecto,
+     proyecto.`nombreProyecto` AS proyecto_nombreProyecto,
+     proyecto.`descripcionProyecto` AS proyecto_descripcionProyecto,
+     proyecto.`presupuesto` AS proyecto_presupuesto,
+     proyecto.`fechaInicio` AS proyecto_fechaInicio,
+     proyecto.`fechaFinal` AS proyecto_fechaFinal
+FROM
+     `proyecto` proyecto]]>
+	</queryString>
+	<field name="proyecto_idProyecto" class="java.lang.Integer"/>
+	<field name="proyecto_nombreProyecto" class="java.lang.String"/>
+	<field name="proyecto_descripcionProyecto" class="java.lang.String"/>
+	<field name="proyecto_presupuesto" class="java.lang.Float"/>
+	<field name="proyecto_fechaInicio" class="java.sql.Date"/>
+	<field name="proyecto_fechaFinal" class="java.sql.Date"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="91" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="ae678a28-788d-429c-87bb-e52c2a0ed2fc" x="215" y="12" width="151" height="47"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PROYECTOS]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="298783ba-83e5-48e3-91b8-50fedab57a7e" x="25" y="59" width="503" height="1"/>
+			</line>
+			<image>
+				<reportElement uuid="5ee055e6-1969-4162-9cec-73da1a8be20c" x="25" y="0" width="58" height="58"/>
+				<imageExpression><![CDATA["C:\\Users\\Fernando Ambrosio\\Desktop\\kako-QpGWJuLFHr1cTnil.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="43" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="a506c8d9-24f4-4ac0-b883-08222b106191" x="0" y="0" width="47" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Codigo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b806fb03-85be-4e50-9eeb-c49df0163b00" x="75" y="0" width="47" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="497d36a0-d8f6-4306-998e-b1f7ea2a3061" x="173" y="0" width="69" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Descripción]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="aa344500-5851-4cbd-9f9b-796e77f6161f" x="317" y="0" width="79" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Presupuesto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="a6aa9cdb-79c0-418c-b891-63a86b2a2116" x="407" y="0" width="45" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Inicio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="96620ae1-2b2e-4bff-9190-5da8c9baabce" x="507" y="0" width="42" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Final]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="46" splitType="Stretch">
+			<textField>
+				<reportElement uuid="a3f37701-ae33-4d90-868b-9848c8043005" x="0" y="0" width="60" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{proyecto_idProyecto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="c6f0b0eb-31fb-4587-a358-2f49a6805d7c" x="75" y="0" width="73" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{proyecto_nombreProyecto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="1f9abfd4-8526-4b6a-8ece-8db590da8b7f" x="159" y="0" width="146" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{proyecto_descripcionProyecto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="948b847d-14d3-497e-b017-a1c35792d36e" x="317" y="0" width="68" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{proyecto_presupuesto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="ad3499e4-997b-4bee-8af8-b56a9b30c699" x="407" y="0" width="71" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{proyecto_fechaInicio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="5dbe8fc3-7f17-4874-b815-5171684bb970" x="507" y="0" width="70" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{proyecto_fechaFinal}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

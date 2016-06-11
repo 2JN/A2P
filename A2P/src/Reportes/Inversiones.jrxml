@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8c2127d4-9f88-44cb-bf07-f8ad06bfbf2d">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     inversion.`Inversionista_nit` AS inversion_Inversionista_nit,
+     inversion.`Proyecto_idProyecto` AS inversion_Proyecto_idProyecto,
+     inversion.`Inversionista_Nombre` AS inversion_Inversionista_Nombre,
+     inversion.`Proyecto_Nombre` AS inversion_Proyecto_Nombre,
+     inversion.`cantidadInversion` AS inversion_cantidadInversion,
+     inversionista.`apellido` AS inversionista_apellido
+FROM
+     `inversionista` inversionista INNER JOIN `inversion` inversion ON inversionista.`nit` = inversion.`Inversionista_nit`]]>
+	</queryString>
+	<field name="inversion_Inversionista_nit" class="java.lang.Integer"/>
+	<field name="inversion_Proyecto_idProyecto" class="java.lang.Integer"/>
+	<field name="inversion_Inversionista_Nombre" class="java.lang.String"/>
+	<field name="inversion_Proyecto_Nombre" class="java.lang.String"/>
+	<field name="inversion_cantidadInversion" class="java.lang.Float"/>
+	<field name="inversionista_apellido" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="87" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="485fd0c8-bcba-4f57-b089-80d4f35cd8e3" x="186" y="21" width="172" height="36"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[INVERSIONES]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="c3cd4c29-5a4f-4439-be0c-9162d4970a81" x="38" y="57" width="484" height="1"/>
+			</line>
+			<image>
+				<reportElement uuid="5ee055e6-1969-4162-9cec-73da1a8be20c" x="17" y="0" width="58" height="58"/>
+				<imageExpression><![CDATA["C:\\Users\\Fernando Ambrosio\\Desktop\\kako-QpGWJuLFHr1cTnil.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="44" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="1d126437-13fe-43f6-b3e4-c5f45b31f719" x="0" y="0" width="100" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Codigo Proyecto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="e558055d-7cf2-46f2-b93d-543ec3080db0" x="119" y="0" width="59" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Proyecto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="243ec069-2dec-45b5-9b15-bbeeaec51b70" x="219" y="0" width="100" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[INVERSIONISTA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b3b0acc9-2297-4b2e-a7e5-7d68a248db19" x="425" y="0" width="83" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cantidad]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="39" splitType="Stretch">
+			<textField>
+				<reportElement uuid="8df7a59e-daf5-4cc3-82f8-f6393c4dc836" x="0" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{inversion_Proyecto_idProyecto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="1d5142f4-c95e-4da5-960d-10cd044b9d1f" x="119" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{inversion_Proyecto_Nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="11fd8e11-0acc-4b5a-bd24-33219ef310eb" x="219" y="0" width="78" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{inversion_Inversionista_Nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="c84e29a2-b4bc-43fd-bcec-583ca0d1c98c" x="408" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{inversion_cantidadInversion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="845d7f41-c372-4646-b225-72d2e331bea8" x="297" y="0" width="72" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{inversionista_apellido}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

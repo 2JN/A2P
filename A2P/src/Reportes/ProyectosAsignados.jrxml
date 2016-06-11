@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="88abe78c-4d6a-4890-8948-bad51d9277fd">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     grupodesarrollo.`Proyecto_idProyecto` AS grupodesarrollo_Proyecto_idProyecto,
+     grupodesarrollo.`Investigador_dpi` AS grupodesarrollo_Investigador_dpi,
+     grupodesarrollo.`Investigador_Nombre` AS grupodesarrollo_Investigador_Nombre,
+     grupodesarrollo.`Proyecto_Nombre` AS grupodesarrollo_Proyecto_Nombre,
+     grupodesarrollo.`nombreGrupo` AS grupodesarrollo_nombreGrupo
+FROM
+     `grupodesarrollo` grupodesarrollo]]>
+	</queryString>
+	<field name="grupodesarrollo_Proyecto_idProyecto" class="java.lang.Integer"/>
+	<field name="grupodesarrollo_Investigador_dpi" class="java.lang.Integer"/>
+	<field name="grupodesarrollo_Investigador_Nombre" class="java.lang.String"/>
+	<field name="grupodesarrollo_Proyecto_Nombre" class="java.lang.String"/>
+	<field name="grupodesarrollo_nombreGrupo" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="87" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="67735cd8-a313-497e-acd6-c4a4e1f59823" x="118" y="23" width="311" height="45"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PROYECTOS ASIGNADOS]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="96f06726-1679-415c-a5c1-99d8bd510a45" x="36" y="68" width="481" height="1"/>
+			</line>
+			<image>
+				<reportElement uuid="5ee055e6-1969-4162-9cec-73da1a8be20c" x="17" y="10" width="58" height="58"/>
+				<imageExpression><![CDATA["C:\\Users\\Fernando Ambrosio\\Desktop\\kako-QpGWJuLFHr1cTnil.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="33" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="01e45f27-984e-4fd7-98b5-6383c8da2c04" x="0" y="0" width="49" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Codigo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="58eff91d-1210-4125-96dd-0014f2b83c30" x="100" y="0" width="49" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DPI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="1c6f5ef1-efc4-4911-addf-7a2b6415dab5" x="214" y="0" width="82" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Investigador]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f2fedc6f-437e-47b8-a545-4844eaa425fa" x="341" y="0" width="58" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Proyecto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="5c077403-3d22-4be8-8b4f-4c276a26c80f" x="452" y="0" width="51" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Grupo]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="40" splitType="Stretch">
+			<textField>
+				<reportElement uuid="869e0fed-715b-4f44-86e6-325ce27021cd" x="0" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{grupodesarrollo_Proyecto_idProyecto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="0e7e3a09-ab1f-4a09-8234-ee8467eac7b2" x="100" y="0" width="60" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{grupodesarrollo_Investigador_dpi}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="47269718-8187-491e-886b-0a931b5d420d" x="214" y="0" width="65" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{grupodesarrollo_Investigador_Nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4f62d126-254e-4746-ad8a-7b30059758cd" x="351" y="0" width="48" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{grupodesarrollo_Proyecto_Nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="1a4114e0-3891-4992-b98b-da0d5f4f2817" x="452" y="0" width="65" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{grupodesarrollo_nombreGrupo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
